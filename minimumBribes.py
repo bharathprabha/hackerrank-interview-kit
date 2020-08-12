@@ -14,10 +14,15 @@ def minimumBribes(q):
     swap_no = 0
     for i in range(len(q)):
         if initial_arr[i] != q[i]:
-            if not q.index(q[i]) - initial_arr.index(q[i]) <= 2:
-                print("Too chaotic")
+            if initial_arr.index(q[i])-q.index(q[i]) > 2:
+                print("Too chaotic", end='')
                 return
             else:
+                for index in range(initial_arr.index(q[i]), q.index(q[i]), -1):
+                    (initial_arr[index], initial_arr[index-1]
+                     ) = (initial_arr[index-1], initial_arr[index])
+                    swap_no += 1
+    print(swap_no)
 
 
 if __name__ == '__main__':
