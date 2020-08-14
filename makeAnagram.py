@@ -5,13 +5,18 @@ import os
 import random
 import re
 import sys
+from collections import Counter
 
 # Complete the makeAnagram function below.
 
 
 def makeAnagram(a, b):
-    
-    return
+    ct_a = Counter(a)
+    ct_b = Counter(b)
+    ct_a.subtract(ct_b)
+    return sum(abs(i) for i in ct_a.values())
+
+
 
 if __name__ == '__main__':
 
