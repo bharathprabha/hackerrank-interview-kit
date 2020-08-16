@@ -1,11 +1,1 @@
-#!/usr/bin/env python3
-
-arr = [1, 2, 3, 4, 5, 6]
-i = 1
-j = 4
-swap = 0
-for i in range(j, i, -1):
-    (arr[i], arr[i-1]) = (arr[i-1], arr[i])
-    print(arr[i],arr[i-1])
-    swap += 1
-print(arr, swap)
+print('hello')

@@ -10,14 +10,13 @@ import heapq
 
 
 def minimumAbsoluteDifference(arr):
-    pos_arr = [abs(i) for i in arr]
-    heapq.heapify(pos_arr)
-    first_least = heapq.heappop(arr)
-    second_least = heapq.heappop(arr)
-
-    min_difference = abs(first_least - second_least)
-
-    return min_difference
+    arr.sort()
+    min_diff = float('inf')
+    for i in range(len(arr) - 1):
+        diff = abs(arr[i] - arr[i+1])
+        if diff < min_diff:
+            min_diff = diff
+    return min_diff
 
 
 if __name__ == '__main__':
@@ -27,3 +26,5 @@ if __name__ == '__main__':
     arr = list(map(int, input().rstrip().split()))
 
     result = minimumAbsoluteDifference(arr)
+
+    print(result)
